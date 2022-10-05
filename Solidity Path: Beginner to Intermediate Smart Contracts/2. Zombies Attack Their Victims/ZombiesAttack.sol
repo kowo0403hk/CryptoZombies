@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: MIT
 pragma solidity >=0.5.0 <0.6.0;
 
 contract ZombieFactory {
@@ -14,8 +13,10 @@ contract ZombieFactory {
 
     Zombie[] public zombies;
 
+    // declare mappings here
+
     function _createZombie(string memory _name, uint256 _dna) private {
-        uint256 id = zombies.push(Zombie(_name, _dna)) - 1; //array.push() returns the new length of the array
+        uint256 id = zombies.push(Zombie(_name, _dna)) - 1;
         emit NewZombie(id, _name, _dna);
     }
 
